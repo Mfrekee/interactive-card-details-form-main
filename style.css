@@ -1,0 +1,410 @@
+body{
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+header{
+overflow-x: clip;
+}
+
+img{
+    width: 70%;
+}
+
+form{
+    margin: 4rem 1rem 0; 
+}
+
+input{
+    width: 100%;
+    height: 2rem;
+    border:  solid 0.5px lightgray;
+    border-radius: 8px;
+}
+
+button{
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    width: 100%;
+    padding: 1rem 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+}
+
+.mobile{
+    /*Add an image here */
+    background-image: url('images/bg-main-mobile.png');
+}
+
+
+.card-back{
+position: relative;
+left: 22dvw;
+top: 14dvh;
+align-items: center;
+display: flex;
+}
+
+.card-back:hover{
+    z-index: 2;
+    /*how to make an item to fade in and out*/
+    opacity: .9;
+ }
+
+.circle{
+    width: 26%;
+    margin-top: 0.5rem;
+}
+
+/* .master{
+   image: url("https://logolook.net/wp-content/uploads/2021/07/Mastercard-Logo-1979.png");
+} */
+
+.card-div{
+    left: 1dvw;
+    /* top: 34dvh; */
+    position: absolute;
+    display: inline;
+    justify-content: space-between;
+    width: 65%;
+}
+
+.card-front{
+left: 1.4dvw;
+top: 5dvh;
+position: relative;
+display: flex;
+align-items: center;
+}
+
+.card-front:hover{
+    /*how to make an item to fade in and out*/
+    opacity: .9;
+ }
+
+
+.card-number{
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.card-name{
+    z-index: 1;
+    /* position: absolute; */
+    right: 34dvw;
+    color: white;
+}
+
+.cvc{
+    color: white;
+    right: 4.5em;
+    position: relative;
+}
+
+.name-date{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.date-cv{
+    display: flex;
+
+}
+.cvv-container{
+    width: 40%;
+}
+
+
+.date{
+    width: 40%;
+}
+
+.date::-webkit-inner-spin-button,.date::-webkit-outer-spin-button{
+    display: none;
+}
+.success{
+    display: none;
+    margin: 4rem 1rem 0; 
+    flex-direction: column;
+    text-align: center;
+    align-items: center;   
+}
+
+.sub-success{
+    color: grey;
+    font-size: 1rem;
+}
+
+.success img{
+    width: 14%;
+}
+
+.success-btn{
+    padding: .5rem;
+    border-radius: 8px;
+}
+
+.attribution {
+     text-align: center;
+     font-size: 12px;
+     }
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+ }
+.attribution a:hover{
+    color: pink;
+}
+
+/* @media(max-width: 310px){
+ .card-div{
+
+
+ }
+} */
+
+@media(min-width: 750px){
+    header{
+        height: 68dvh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 68%;
+    } 
+
+    form{
+        width: 60%;
+    }
+
+    img{
+        width: 75%;
+    }
+
+     .desktop{
+    background-image: url('images/bg-main-desktop.png');
+}
+    .body-sec{
+        display: flex;
+        align-items: center;
+        height: 100dvh;
+        justify-content: center;
+    }
+    .card-front{
+        position: static;
+        /* margin-left: 4rem; */
+        justify-content: center;
+    }
+    .card-div{
+        width:34%;
+        /* margin-left: 6rem;*/
+        left: auto;
+    }
+    .card-back{
+        position: static;
+        justify-content: center;
+    }
+    .cvv-container{
+        width: 100%;
+        display: inline-block;
+    }
+
+.name-date{
+    padding-top: 1rem;
+}
+
+    .date-cv{
+        display: block;
+    }
+    .date{
+        width: 100%;
+    }
+}
+
+.success{
+    font-size: 1.5rem;
+}
+
+@media(min-width: 1000px){
+header{
+    display: block;
+    width: auto;
+    height: 98dvh;
+    overflow: visible;
+}
+
+img{
+        width: 21rem;
+ }
+
+    form{
+width: 48%;
+padding: 0 9em;    
+}
+
+.body-sec{
+    display: flex;
+    /* font-size: 2rem; */
+    /* justify-content: center; */
+    align-items: center;
+    height: 96.5dvh;
+/* width: 100dvw; */
+}
+
+.card-back{
+    top: 23.5em;
+    left: 8em;
+    position: relative;
+    justify-content: normal;
+}
+
+.cvc{
+    right: 4.5em;
+}
+
+.card-front{
+    top: -1em;
+    left: 5em;
+    position: relative;
+    margin-left: 0;
+    justify-content: normal;
+}
+
+.circle{
+    margin-top: 1.5rem;
+    width: 34%;
+}
+
+.card-number{
+    top: 1.5rem;
+}
+
+.card-div{
+    display: flex;
+    flex-direction: column;
+    width: 51%;
+    left: 0.5dvw;
+    flex-wrap: wrap;
+}
+
+.name-date{
+    width: 160%;
+    padding: 0 0 1.5rem;
+}
+
+.date{
+   width: 40%;
+}
+
+.date-cv{
+    display: flex;
+}
+
+.date-cv p{
+    width: 90%;
+
+}
+
+.success{
+ padding-left: 14rem;
+ width: 27%;
+ margin: auto;
+}
+
+}
+
+@media(min-width: 1400px){
+   body{
+    font-size: 1.5rem;
+    
+}
+   
+    header{
+        height: 100dvh;
+    }
+
+    img{
+        width: 25rem;
+    }
+
+    input{
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+
+    input::placeholder{
+        font-size: 1.4rem;
+    }
+
+    button{
+        font-size: 2rem;
+        width: 105%;
+    }
+
+    .card-back{
+        top: 23em;
+        left: 9em;
+    }
+
+    .card-front{
+        top: 4rem;
+   left: 5em;
+ }
+
+ .circle {
+    top: 3rem;
+    position: relative;
+    margin: 0;
+}
+
+.card-number {
+    top: 4rem;
+}
+
+ .date{
+    width: 30%;
+ }
+
+    .cvc{
+        right: 4em;
+    }
+    
+    .attribution {
+    font-size: 1.5rem;
+    }
+    
+}
+
+@media(min-width: 2000px){
+    body{
+        font-size: 2rem;
+    }
+
+    img{
+        width: 43rem;
+    }
+
+    input::placeholder{
+        font-size: 2rem;
+    }
+
+.circle{
+    top: 0.5rem;
+}
+
+    .card-back{
+        top: 29em;
+    }
+
+    .card-front{
+        top: 4em;
+ }
+
+ .name-date {
+    width: 170%;
+    padding: 2rem 0 0;
+}
+
+    .cvc{
+        right: 9rem
+    }
+}
