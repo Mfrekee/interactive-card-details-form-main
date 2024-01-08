@@ -1,87 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-  
-  </style>
 </head>
+
 <body>
   <section class="body-sec">
-  <header class="mobile">
-<div class="card-back"><img src="images\bg-card-back.png" alt=""><span class="cvc">000</span></div>
+    <header class="mobile">
+      <div class="card-back"><img src="images\bg-card-back.png" alt=""><span class="cvc">000</span></div>
 
- 
 
-<div class="card-front"><img src="images\bg-card-front.png" alt="" >
- <div class="card-div"><img src="images\card-logo.svg" alt="" class="circle">
-<p class="card-number"> 0000 0000 0000 0000 </p>
-<p></p>
-<p class="name-date">
- <span class="card-name"> Jane Appleseed</span>
-  <span><span class="card-month">00</span> / <span class="card-year">00</span></span>
-</p>
 
-</div>
-  </div>
-</header>
-<form action="" >
-  CARDHOLDER NAME
-  <br>
- <input type="text" spellcheck="true" required placeholder="e.g. Jane Appleseed" id="cardName" oninput="cardN()">
+      <div class="card-front"><img src="images\bg-card-front.png" alt="">
+        <div class="card-div"><img src="images\card-logo.svg" alt="" class="circle">
+          <div class="card-number-div">
+            <p class="card-number"> 0000 0000 0000 0000 </p>
 
- <p>
-  CARD NUMBER
-  <br>
-  <input type="text"  pattern="[0-9]*" inputmode="numeric" required name="cardNo" id="cardNo" oninput="cardNum(event)" placeholder="e.g. 1234 5678 9123 0000">
-  
-</p>
-<div class="date-cv">
-  
- 
-    <p>
-  EXP. DATE (<label for="MM">MM</label>/<label for="YY">YY</label>)
- 
- <br>
-  <input type="number" required name="MM" id="month" placeholder="MM" class="date" oninput="MO()" pattern="[0-9]{2}" maxlength="2" max="12" min="01">
-  <input type="number" placeholder=" YY" name="YY" id="year" class="date" required pattern="[0-9]{2}" oninput="YE()">
- </p> 
- 
-  <p class="cvv-container">
-  <label for="CVC">CVC/CVV</label>
+          </div>
+          <p></p>
+          <div class="name-date">
+            <p>
+              <span class="card-name"> Jane Appleseed</span>
+              <span><span class="card-month">00</span> / <span class="card-year">00</span></span>
+            </p>
+          </div>
 
-  <br>
-  <input  name="CVC" id="CVC" required type="text" pattern="[0-9]*" maxlength="4" inputmode="numeric" oninput="cvv()" placeholder="e.g. 123">
- </p> 
- 
-</div>
- <button type="submit" id="submitButton">Confirm</button>
-</form>
- 
+        </div>
+      </div>
+    </header>
+    <form action="">
+      CARDHOLDER NAME
+      <br>
+      <input type="text" spellcheck="true" required placeholder="e.g. Jane Appleseed" id="cardName" oninput="cardN()">
+      <span id="usernameError" class="errorName">Username is Required.</span>
 
-  <!-- Completed state start -->
-<section class="success">
- <img src="images\icon-complete.svg" alt="">
- <p> THANK YOU!</p>
-  <p class="sub-success">We've added your card details</p>
- <button class="success-btn">Continue</button> 
+      <p>
+        CARD NUMBER
+        <br>
+        <input type="text" pattern="[0-9]*" inputmode="numeric" required maxlength="18" name="cardNo" id="cardNo"
+          oninput="cardNum(event)" placeholder="e.g. 1234 5678 9123 0000">
+        <span id="cardNumError" class="errorCard">Wrong Format, Numbers only</span>
+        <span id="cardNumError2" class="errorCard2">Please Input a Valid Card Number</span>
+      </p>
+      <div class="date-cv">
+
+
+        <p>
+          EXP. DATE (<label for="MM">MM</label>/<label for="YY">YY</label>)
+
+          <br>
+          <input type="number" required name="MM" id="month" placeholder="MM" class="date" oninput="MO()"
+            pattern="[0-9]{2}" maxlength="2" max="12" min="01">
+
+          <input type="number" placeholder=" YY" name="YY" id="year" class="date" required pattern="[0-9]{2}"
+            oninput="YE()">
+          <span id="dateError" class="errorDate">Can't be blank</span>
+        </p>
+
+        <p class="cvv-container">
+          <label for="CVC">CVC/CVV</label>
+
+          <br>
+          <input name="CVC" id="CVC" required type="text" pattern="[0-9]*" maxlength="4" inputmode="numeric"
+            oninput="cvv()" placeholder="e.g. 123">
+          <span id="cvError" class="errorCV">Please input 3-4 digit CVC.</span>
+        </p>
+
+      </div>
+      <button type="submit" id="submitButton">Confirm</button>
+    </form>
+
+
+    <!-- Completed state start -->
+    <section class="success">
+      <img src="images\icon-complete.svg" alt="">
+      <p> THANK YOU!</p>
+      <p class="sub-success">We've added your card details</p>
+      <button class="success-btn">Continue</button>
+    </section>
   </section>
-</section>
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://www.frontendmentor.io/profile/Mfrekee">Mfrekemfon🫠</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/Mfrekee">Mfrekemfon😪</a>.
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
