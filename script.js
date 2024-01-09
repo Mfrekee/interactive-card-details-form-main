@@ -155,7 +155,7 @@ function YE() {
 
 
 cardForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+    // event.preventDefault();
 
     var validInputs = true;
     var inputs = cardForm.getElementsByTagName('input');
