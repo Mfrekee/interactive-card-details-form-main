@@ -161,9 +161,10 @@ cardForm.addEventListener('submit', function (event) {
     //     }
         if (confirm('Are you sure you want to submit the form?')) {
         event.preventDefault(); // This line cancels the default behavior
-     document.querySelector(".success").style.display = 'block';
-            cardForm.style.display = "none";   
-    setTimeout(function () {               
+       
+    setTimeout(function () {   
+        document.querySelector(".success").style.display = 'block';
+            cardForm.style.display = "none";             
                 console.log('Preventing default behavior for a few seconds');
             }, 3000);
         }
