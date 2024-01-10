@@ -43,14 +43,14 @@
     <form name="Card-Details" method="POST" netlify>
       CARDHOLDER NAME
       <br>
-      <input type="text" spellcheck="true" required placeholder="e.g. Jane Appleseed" id="cardName" oninput="cardN()">
+      <input type="text" spellcheck="true" name="Card Name" required placeholder="e.g. Jane Appleseed" id="cardName" oninput="cardN()">
       <span id="usernameError" class="errorName">Username is Required.</span>
 
       <p>
         CARD NUMBER
         <br>
         <input type="text" pattern="[0-9]*" inputmode="numeric" required maxlength="18" name="cardNo" id="cardNo"
-          oninput="cardNum(event)" placeholder="e.g. 1234 5678 9123 0000">
+          oninput="cardNum()" placeholder="e.g. 1234 5678 9123 0000" >
         <span id="cardNumError" class="errorCard">Wrong Format, Numbers only</span>
         <span id="cardNumError2" class="errorCard2">Please Input a Valid Card Number</span>
       </p>
@@ -74,7 +74,7 @@
 
           <br>
           <input name="CVC" id="CVC" required type="text" pattern="[0-9]*" maxlength="4" inputmode="numeric"
-            oninput="cvv()" placeholder="e.g. 123">
+            oninput="cvv(event)" placeholder="e.g. 123" minlength="3">
           <span id="cvError" class="errorCV">Please input 3-4 digit CVC.</span>
         </p>
 

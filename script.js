@@ -2,7 +2,7 @@ const header = document.querySelector("header")
 const master = document.querySelector(".circle")
 const cardForm = document.querySelector("form")
 const continueButton = document.querySelector(".success-btn")
-const headerForm = document.querySelectorAll
+// const headerForm = document.querySelectorAll
 if (window.innerWidth >= 1040) {
     //code for screen width greater than or equal to 1040 pixels goes here
     header.classList.replace("mobile", "desktop")
@@ -26,7 +26,6 @@ function cardN() {
     document.querySelector(".card-name").innerHTML = CN;
 
     let cardName = document.getElementById('cardName');
-    //  let defaultValue = 'Jane Appleseed';
 
     if (cardName.value === '') {
         //     cardName.value = defaultValue;
@@ -57,30 +56,23 @@ function cardNum() {
     }
     document.querySelector(".card-number").innerHTML = spacedNum;
 
-
-
     if (/^(?:5[1-5][0-9\s]{14})$/.test(NUM)) {
         master.src = "https://logolook.net/wp-content/uploads/2021/07/Mastercard-Logo-1979.png";
-        alert("Mastercard detected")
-        console.log(NUM);
         document.getElementById('cardNumError2').style.display = "none"
     } else if (/^(?:50[067][180]|6500)(?:[0-9]{15})$/.test(NUM)) {
         master.src = "https://pbs.twimg.com/profile_images/646404903934431232/XjeK14Sz_400x400.jpg"
-        alert("verve")
         document.getElementById('cardNumError2').style.display = "none"
     } else if (/^4[0-9]{12}(?:[0-9\s]{3,4})?$/.test(NUM)) {
         master.src = "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/363_Visa_Credit_Card_logo-1024.png"
-        alert("visa Card")
         document.getElementById('cardNumError2').style.display = "none"
     } else if (/^3[47](?:[0-9]{13})$/.test(NUM)) {
         master.src = "https://th.bing.com/th/id/R.0b7db6d8279dc858726515b77139e0be?rik=U3lq3kOTjgOkgw&pid=ImgRaw&r=0"
-        alert("American Expresso🍵")
         document.getElementById('cardNumError2').style.display = "none"
     } else {
-        // alert("Invalid card number")
         master.src = "images/card-logo.svg"
         document.getElementById('cardNumError2').style.display = "block"
-    }
+       
+}
     var cardNo = document.getElementById('cardNo').value;
 
     if (/[a-zA-Z]/.test(cardNo)) {
@@ -94,7 +86,22 @@ function cardNum() {
 
 
 }
+// document.querySelector('body').addEventListener('click', function (event) {
+//     const target = event.target;
 
+//     if (target.matches('.red')) {
+//         event.preventDefault();
+//         console.log('I only show up while default is prevented');
+//     }
+
+//     if (target.matches('div')) {
+//         console.log('I will always show up');
+//     }
+// });
+
+// setTimeout(function () {
+//     document.querySelector('div').classList.remove('red');
+// }, 3000);
 function cvv() {
     var CVV = document.getElementById("CVC").value;
     document.querySelector(".cvc").innerHTML = CVV
@@ -106,7 +113,6 @@ function cvv() {
         //     cardName.value = defaultValue;
         document.getElementById('cvError').style.display = 'block';
         document.getElementById('CVC').style.borderColor = 'red';
-        //   document.querySelector(".cvc").textContent = "000"
         // event.preventDefault();
     } else {
         document.getElementById('CVC').style.borderColor = 'purple'
@@ -115,6 +121,7 @@ function cvv() {
     }
 
 }
+
 
 function MO() {
     var month = document.getElementById("month").value
@@ -155,22 +162,40 @@ function YE() {
 
 
 cardForm.addEventListener('submit', function (event) {
-    // event.preventDefault();
-
-    var validInputs = true;
-    var inputs = cardForm.getElementsByTagName('input');
-    for (var i = 0; i < inputs.length; i++) {
-        if (!inputs[i].validity.valid) {
-            validInputs = false;
-            break;
-        }
-
-        if (validInputs) {
+event.preventDefault();
+//     if (validInputs) {
+        
+//     } else {
+     
+//     }
+// });
+       setTimeout(function () {
             document.querySelector(".success").style.display = 'block';
-            cardForm.style.display = "none";
-        }
-    }
-})
+        cardForm.style.display = "none";
+            
+            console.log('Preventing default behavior for a few seconds');
+        }, 3000)});
+//  if (validInputs) {
+//             document.querySelector(".success").style.display = 'block';
+            
+        
+//             setTimeout(function () {
+//                 cardForm.style.backgroundColor = "black";
+//                 console.log('Preventing default behavior for a few seconds');
+//             }, 3000);
+//         }
+//     var validInputs = false;
+//     var inputs = cardForm.getElementsByTagName('input');
+//     for (var i = 0; i < inputs.length; i++) {
+//         if (!inputs[i].validity.valid) {
+//             validInputs = true;
+//             break;
+            
+//         }
+// // event.preventDefault();
+       
+//     }
+// });
 
 
 continueButton.addEventListener('click', function () {
