@@ -161,13 +161,14 @@ cardForm.addEventListener('submit', function (event) {
         if (confirm('Are you sure you want to submit the form?')) {
         document.querySelector(".success").style.display = 'block';
             cardForm.style.display = "none";     
-                 
-        // event.preventDefault(); // This line cancels the default behavior
+         // This line cancels the default behavior
        
     setTimeout(function () {   
         
                 console.log('Preventing default behavior for a few seconds');
             }, 3000);
+        } else{
+            event.preventDefault();
         }
         
     });
