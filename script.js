@@ -162,40 +162,26 @@ function YE() {
 
 
 cardForm.addEventListener('submit', function (event) {
-event.preventDefault();
-//     if (validInputs) {
-        
-//     } else {
-     
-//     }
-// });
-       setTimeout(function () {
+    
+
+    var validInputs = true;
+    var inputs = cardForm.getElementsByTagName('input');
+    for (var i = 0; i < inputs.length; i++) {
+        if (!inputs[i].validity.valid) {
+            validInputs = false;
+            break;
+        }
+
+        if (validInputs) {
             document.querySelector(".success").style.display = 'block';
-        cardForm.style.display = "none";
-            
-            console.log('Preventing default behavior for a few seconds');
-        }, 3000)});
-//  if (validInputs) {
-//             document.querySelector(".success").style.display = 'block';
-            
+            cardForm.style.display = "none";
         
-//             setTimeout(function () {
-//                 cardForm.style.backgroundColor = "black";
-//                 console.log('Preventing default behavior for a few seconds');
-//             }, 3000);
-//         }
-//     var validInputs = false;
-//     var inputs = cardForm.getElementsByTagName('input');
-//     for (var i = 0; i < inputs.length; i++) {
-//         if (!inputs[i].validity.valid) {
-//             validInputs = true;
-//             break;
-            
-//         }
-// // event.preventDefault();
-       
-//     }
-// });
+            setTimeout(function () {
+                event.preventDefault();
+                console.log('Preventing default behavior for a few seconds');
+            }, 3000);
+        }
+    }});
 
 
 continueButton.addEventListener('click', function () {
