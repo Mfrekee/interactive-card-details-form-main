@@ -189,6 +189,9 @@ button {
     color: pink;
 }
 
+input[name = "cardNo"]:required{
+    
+}
 
 @media(min-width: 650px) {
     header {

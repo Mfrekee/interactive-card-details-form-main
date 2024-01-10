@@ -71,7 +71,7 @@ function cardNum() {
     } else {
         master.src = "images/card-logo.svg"
         document.getElementById('cardNumError2').style.display = "block"
-       
+        
 }
     var cardNo = document.getElementById('cardNo').value;
 
