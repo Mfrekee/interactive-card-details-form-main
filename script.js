@@ -177,9 +177,9 @@ cardForm.addEventListener('submit', function (event) {
             cardForm.style.display = "none";
         
             setTimeout(function () {
-                event.preventDefault();
+                
                 console.log('Preventing default behavior for a few seconds');
-            }, 3000);
+            }, 3000, event.preventDefault());
         }
     }});
 
