@@ -164,6 +164,11 @@ cardForm.addEventListener('submit', function (event) {
             cardForm.style.display = "none";    
     setTimeout(function () {   
                  
+        event.preventDefault(); // This line cancels the default behavior
+       
+    setTimeout(function () {   
+        document.querySelector(".success").style.display = 'block';
+            cardForm.style.display = "none";             
                 console.log('Preventing default behavior for a few seconds');
             }, 3000);
         }
