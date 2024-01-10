@@ -2,7 +2,7 @@ const header = document.querySelector("header")
 const master = document.querySelector(".circle")
 const cardForm = document.querySelector("form")
 const continueButton = document.querySelector(".success-btn")
-// const headerForm = document.querySelectorAll
+
 if (window.innerWidth >= 1040) {
     //code for screen width greater than or equal to 1040 pixels goes here
     header.classList.replace("mobile", "desktop")
@@ -145,33 +145,36 @@ function YE() {
 
 
 cardForm.addEventListener('submit', function (event) {
-    
+    event.preventDefault();
 
-    // var validInputs = true;
-    // var inputs = cardForm.getElementsByTagName('input');
-    // for (var i = 0; i < inputs.length; i++) {
-    //     if (!inputs[i].validity.valid) {
-    //         validInputs = false;
-    //         break;
-    //     }
-
-    //     if (validInputs) {
-           
-    //     }
-        if (confirm('Are you sure you want to submit the form?')) {
-        document.querySelector(".success").style.display = 'block';
-            cardForm.style.display = "none";     
-         // This line cancels the default behavior
-       
-    setTimeout(function () {   
-        
-                console.log('Preventing default behavior for a few seconds');
-            }, 3000);
-        } else{
-            event.preventDefault();
+    var validInputs = true;
+    var inputs = cardForm.getElementsByTagName('input');
+    for (var i = 0; i < inputs.length; i++) {
+        if (!inputs[i].validity.valid) {
+            validInputs = false;
+            break;
         }
+
+        if (validInputs) {
+            document.querySelector(".success").style.display = 'block';
+            cardForm.style.display = "none";     
+        }
+
+
+    //     if (confirm('Are you sure you want to submit the form?')) {
+    //     document.querySelector(".success").style.display = 'block';
+    //         cardForm.style.display = "none";     
+    //      // This line cancels the default behavior
+       
+    // setTimeout(function () {   
         
-    });
+    //             console.log('Preventing default behavior for a few seconds');
+    //         }, 3000);
+    //     } else{
+    //         event.preventDefault();
+    //     }
+        
+    }});
 
 
 continueButton.addEventListener('click', function (event) {
