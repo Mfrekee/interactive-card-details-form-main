@@ -98,7 +98,6 @@ function cvv() {
         //     cardName.value = defaultValue;
         document.getElementById('cvError').style.display = 'block';
         document.getElementById('CVC').style.borderColor = 'red';
-        // event.preventDefault();
     } else {
         document.getElementById('CVC').style.borderColor = 'purple'
         document.getElementById('cvError').style.display = 'none';
