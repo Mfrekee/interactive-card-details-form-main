@@ -86,22 +86,7 @@ function cardNum() {
 
 
 }
-// document.querySelector('body').addEventListener('click', function (event) {
-//     const target = event.target;
 
-//     if (target.matches('.red')) {
-//         event.preventDefault();
-//         console.log('I only show up while default is prevented');
-//     }
-
-//     if (target.matches('div')) {
-//         console.log('I will always show up');
-//     }
-// });
-
-// setTimeout(function () {
-//     document.querySelector('div').classList.remove('red');
-// }, 3000);
 function cvv() {
     var CVV = document.getElementById("CVC").value;
     document.querySelector(".cvc").innerHTML = CVV
@@ -134,7 +119,6 @@ function MO() {
         document.getElementById('dateError').style.display = 'block';
         document.getElementById('month').style.borderColor = 'red';
         document.querySelector(".card-month").textContent = "00"
-        // event.preventDefault();
     } else {
         document.getElementById('month').style.borderColor = 'purple'
         document.getElementById('dateError').style.display = 'none';
@@ -174,17 +158,19 @@ cardForm.addEventListener('submit', function (event) {
 
         if (validInputs) {
             document.querySelector(".success").style.display = 'block';
-            cardForm.style.display = "none";
-        
-            setTimeout(function () {
-                
-                console.log('Preventing default behavior for a few seconds');
-            }, 3000, event.preventDefault());
+            cardForm.style.display = "none";    
         }
+        if (confirm('Are you sure you want to submit the form?')) {
+        event.preventDefault(); // This line cancels the default behavior
+    }
+        setTimeout(function () {               
+                console.log('Preventing default behavior for a few seconds');
+            }, 3000);
     }});
 
 
-continueButton.addEventListener('click', function () {
+continueButton.addEventListener('click', function (event) {
+    
     cardForm.style.display = "block"
     cardForm.reset();
     document.querySelector(".card-name").textContent = "Jane Appleseed"

@@ -189,9 +189,6 @@ button {
     color: pink;
 }
 
-input[name = "cardNo"]:required{
-    
-}
 
 @media(min-width: 650px) {
     header {
@@ -314,7 +311,7 @@ input[name = "cardNo"]:required{
 
     .card-number {
         top: 0.5rem;
-        width: 115%;
+        width: 135%;
     }
 
     .card-div {

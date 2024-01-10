@@ -50,7 +50,7 @@
         CARD NUMBER
         <br>
         <input type="text" pattern="[0-9]*" inputmode="numeric" required maxlength="18" name="cardNo" id="cardNo"
-          oninput="cardNum()" placeholder="e.g. 1234 5678 9123 0000" >
+          oninput="cardNum()" placeholder="e.g. 1234 5678 9123 0000" minlength="13">
         <span id="cardNumError" class="errorCard">Wrong Format, Numbers only</span>
         <span id="cardNumError2" class="errorCard2">Please Input a Valid Card Number</span>
       </p>
