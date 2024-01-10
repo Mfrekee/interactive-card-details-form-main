@@ -148,25 +148,27 @@ function YE() {
 cardForm.addEventListener('submit', function (event) {
     
 
-    var validInputs = true;
-    var inputs = cardForm.getElementsByTagName('input');
-    for (var i = 0; i < inputs.length; i++) {
-        if (!inputs[i].validity.valid) {
-            validInputs = false;
-            break;
-        }
+    // var validInputs = true;
+    // var inputs = cardForm.getElementsByTagName('input');
+    // for (var i = 0; i < inputs.length; i++) {
+    //     if (!inputs[i].validity.valid) {
+    //         validInputs = false;
+    //         break;
+    //     }
 
-        if (validInputs) {
-            document.querySelector(".success").style.display = 'block';
-            cardForm.style.display = "none";    
-        }
+    //     if (validInputs) {
+           
+    //     }
         if (confirm('Are you sure you want to submit the form?')) {
         event.preventDefault(); // This line cancels the default behavior
-    }
-        setTimeout(function () {               
+     document.querySelector(".success").style.display = 'block';
+            cardForm.style.display = "none";   
+    setTimeout(function () {               
                 console.log('Preventing default behavior for a few seconds');
             }, 3000);
-    }});
+        }
+        
+    });
 
 
 continueButton.addEventListener('click', function (event) {
